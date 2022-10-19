@@ -3,15 +3,21 @@ const mongoose =require('mongoose')
 const {Schema}=mongoose
 
 const CustSchema=new Schema({
-    code:{type:String,required:true},
-    name:{type:String,required:true},
-    streets:[new Schema({
-        streetCode: {type:String,required:true},
-        streetName: {type:String, required:true}
-    },{ _id:false })]
-    // DateOfBirth:{type:Date,required:true},
-    // Telephon:{type:String,required:true},
-    // Pelephon:{type:String,required:true}
+    // custName:[new Schema({
+    //     firstName: {type:String,required:true},
+    //     lastName: {type:String, required:true}
+    // })],
+    firstName: {type:String,required:true},
+    lastName: {type:String, required:true},
+    custId:{type:String,required:true},
+    address:[new Schema({
+        city: {type:String,required:true},
+        street: {type:String, required:true},
+        streetNumber:{type:Number, required:true}
+    },{ _id:false })],
+    dateOfBirth:{type:String,required:true},
+    telephon:{type:String,required:true},
+    pelephon:{type:String,required:true}
 })
 
 

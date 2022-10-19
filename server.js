@@ -24,6 +24,11 @@ app.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname,'./pages/index.html'))
 })
 
+app.get('/form',(req,res)=>{
+    console.log(req)
+    res.sendFile(path.join(__dirname,'./pages/form.html'))
+})
+
 app.use('/api',api_router)
 app.use(exp.json())
 app.use('/admin',admin_router)
